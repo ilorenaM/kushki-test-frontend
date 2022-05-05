@@ -6,6 +6,11 @@
 		<script src="./script.js"></script>
 		<link href="./styles/style.css" rel="stylesheet" type="text/css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<script src="./libs/jsonViewer/src/jquery.json-editor.js"></script>
+		<script src="./libs/jsonViewer/src/jquery.json-viewer.js"></script>
+		<link href="./libs/jsonViewer/src/jquery.json-viewer.css" rel="stylesheet" type="text/css">
+
 
 		<div class="tab-title">
 			<button class="tablinks-title active" onclick="openTabHeader(event, 'subscription')">Suscribirse</button>
@@ -65,7 +70,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<button class="subscription-button">Suscribirse</button>
+									<button class="success-button">Suscribirse</button>
 								</div>
 							</form>
 						</div>
@@ -121,7 +126,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<button class="subscription-button">Autorizar</button>
+									<button class="success-button">Autorizar</button>
 								</div>
 							</form>
 						</div>
@@ -143,12 +148,16 @@
 				</div>
 				<div id="transactions" style="display: none;"  class="container tabcontent-title">
 					<div class="sub-container subscription-list-container">
-						<content>
-							<div class="subs-title">
-								<p class="title">Lista transacciones</p>
-							</div>
+						<div class="subs-title">
+							<p class="title">Lista transacciones</p>
+						</div>
+						<content id="transactionsList">
 							<div class="transaction-item" onclick="openTransacSelected(event)">
-								<p class="text-item">Transaccion 1</p>
+								<div class="transaction-info">
+									<p class="text-item">Nombre</p>
+									<p class="text-date">Fecha</p>
+								</div>
+								<p class="text-price">Monto</p>
 							</div>
 							<div class="transaction-item" onclick="openTransacSelected(event)">
 								<p class="text-item">Transaccion 1</p>
@@ -159,6 +168,42 @@
 						</content>
 					</div>
 					<div class="sub-container blue-color subscription-container">
+						<div class="subs-title">
+							<p class="title">Detalles</p>
+						</div>
+						<div class="form-group">
+							<input id="nameTransaction" placeholder="Nombre" class="form-input" disabled/>
+							<label>Nombre</label>
+						</div>
+						<div class="form-group">
+							<input id="emailTransaction" placeholder="Correo" class="form-input" disabled />
+							<label>Correo</label>
+						</div>
+						<div class="form-group">
+							<input id="phoneTransaction" placeholder="Telefono" class="form-input" disabled/>
+							<label>Telefono</label>
+						</div>
+						<div class="form-group">
+							<input id="cardTransaction" placeholder="Num. Tarjeta" class="form-input" disabled />
+							<label>Num. Tarjeta</label>
+						</div>
+						<div class="form-group">
+							<input id="amountTransaction" placeholder="Monto" class="form-input" disabled/>
+							<label>Monto</label>
+						</div>
+						<div class="form-group">
+							<input id="brandTransaction" placeholder="Franquicia" class="form-input" disabled/>
+							<label>Franquicia</label>
+						</div>
+						<div class="form-group">
+							<input id="statusTransaction" placeholder="Estado" class="form-input" disabled/>
+							<label>Estado</label>
+						</div>
+						<input id="transactionSelected" style="display: none;"/>
+						<div class="form-group two-col">
+							<button id="detailTransaction" class="success-button two-col-item" onclick="openTransactDetail()" disabled>Detalle</button>
+							<button id="deleteTransaction" class="danger-button two-col-item" onclick="openTransactDelete()" disabled>Eliminar</button>
+						</div>
 					</div>
 				</div>
 		</container>

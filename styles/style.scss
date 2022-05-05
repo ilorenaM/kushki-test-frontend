@@ -14,7 +14,7 @@ body{
 
 
 .center-cont{
-    margin:0 auto;
+    margin:1.5rem;
     text-align: center;
     left: 50%;
     top: 25%;
@@ -24,11 +24,12 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .container{
     width: 50%;
-    height: 500px;
+    min-height: 500px;
     border-radius: 1.5rem;
     background-color: whitesmoke;
     box-shadow: 0px 15px 20px rgba(0,0,0,.3);
@@ -70,8 +71,20 @@ body{
 .text-item {
     margin: 0;
     color: $dark;
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
+
+
+.text-date {
+    margin: 0;
+    color: $dark;
+    font-size: 0.6rem;
+}
+.text-price {
+    margin: 0;
+    color: $blue;
+    font-size: 1.2rem;
+} 
 
 .title {
     margin: 0;
@@ -100,7 +113,7 @@ body{
     width: 100%;
     border-bottom: #f5f5dc38;
     border-bottom-style: groove;
-    margin-bottom: 5%;
+    margin-bottom: 1.5rem;
     display: flex;
 }
 
@@ -160,7 +173,7 @@ input:focus + label, input:not(:placeholder-shown) + label{
     transition: all 0.3s ease;
 }
 
-.subscription-button{
+.success-button{
     display: block;
     width: 100%;
     background: #38b242;
@@ -169,16 +182,42 @@ input:focus + label, input:not(:placeholder-shown) + label{
     margin-bottom: 1rem;
     border-radius: 0.25rem;
     color: white;
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 500;
     transition: all 0.1s ease;
 }
 
-.subscription-button:hover{
+.success-button:hover{
     cursor: pointer;
     background-color: #42cf4ed2;
 }
 
+.success-button:disabled{
+    background-color: #7dcd84ab;
+}
+
+.danger-button{
+    display: block;
+    width: 100%;
+    background: #ce463f;
+    border: none;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.1s ease;
+}
+
+.danger-button:hover{
+    cursor: pointer;
+    background-color: #ce463fd2;
+}
+.danger-button:disabled{
+    cursor: pointer;
+    background-color: #ba635ed3;
+}
 .subscription-item{
     text-align: left;
     padding: 0.75rem;
@@ -208,8 +247,11 @@ input:focus + label, input:not(:placeholder-shown) + label{
 }
 
 .transaction-item{
-    text-align: left;
-    padding: 0.75rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2rem;
     margin-bottom: 0.5rem;
 }
 
@@ -235,6 +277,7 @@ input:focus + label, input:not(:placeholder-shown) + label{
     display: flex;
     justify-content: space-between;
     margin-bottom: 1.5rem;
+    height: 50px;
   }
   
   .tab button {
@@ -290,13 +333,25 @@ input:focus + label, input:not(:placeholder-shown) + label{
     background-color: #81b5f4;
   }
 
+  .scroll-y{
+      overflow-y: scroll;
+  }
 
-  
+  .two-col{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 0;
+  }
+
+  .two-col-item{
+    width: 45%;
+  }
+
 @media only screen and (max-width: 900px) {
     .container{
         min-width: 70%;
         min-height: 400px;
-        border-radius: 10%;
         background-color: whitesmoke;
         box-shadow: 0px 15px 20px rgba(0,0,0,.3);
         display: flex;
@@ -323,7 +378,6 @@ input:focus + label, input:not(:placeholder-shown) + label{
     .container{
         min-width: 90%;
         min-height: 400px;
-        border-radius: 10%;
         background-color: whitesmoke;
         box-shadow: 0px 15px 20px rgba(0,0,0,.3);
         display: flex;

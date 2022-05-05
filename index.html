@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>Kushki Store</title>
+		<script src="./script.js"></script>
+		<link href="./styles/style.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+		<div class="tab-title">
+			<button class="tablinks-title active" onclick="openTabHeader(event, 'subscription')">Suscribirse</button>
+			<button class="tablinks-title" onclick="openTabHeader(event, 'subscriptionsList')">Lista Suscripciones</button>
+			<button class="tablinks-title" onclick="openTabHeader(event, 'transactions')">Transacciones</button>
+		</div>
+	</head>
+	<body>
+		<container class="center-cont">
+				<div id="subscription"   class="container tabcontent-title">
+						<div class="sub-container subscription-container">
+							<div class="subs-title">
+								<p class="title">Plan seleccionado</p>
+							</div>
+							<div class="subs-info">
+								<h2 class="text-details ">Premium</h2>
+
+								<p class="price-text ">S/ 50</p>
+								<div>
+									<p class="text-details"><span class="check">✓</span>Plan premium con todos los accesos</p>
+									<p class="text-details"><span class="check">✓</span>Cobro mensual todos los 5 de cada mes</p>
+								</div>
+							</div>
+						</div>
+						<div class="sub-container blue-color subscription-container">
+							<div class="subs-title">
+								<p class="title-blue">Tarjeta de crédito</p>
+								<img src="./images/visa.svg" />
+								<img src="./images/mastercard.svg" />
+								<img src="./images/amex.svg" />
+							</div>
+							<form>
+								<div class="form-group">
+									<input placeholder="Nombre" class="form-input"/>
+									<label>Nombre</label>
+								</div>
+								<div class="form-group">
+									<input placeholder="Correo" class="form-input"/>
+									<label>Correo</label>
+								</div>
+								<div class="form-group">
+									<input placeholder="Telefono" class="form-input"/>
+									<label>Telefono</label>
+								</div>
+								<div class="form-group">
+									<input placeholder="Num. Tarjeta" class="form-input"/>
+									<label>Num. Tarjeta</label>
+								</div>
+								<div class="cvv-info">
+									<div class="form-group">
+										<input placeholder="MM/YY" class="form-input"/>
+										<label>MM/YY</label>
+									</div>
+									<div class="form-group">
+										<input type="password" placeholder="CVV" class="form-input"/>
+										<label>CVV</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<button class="subscription-button">Suscribirse</button>
+								</div>
+							</form>
+						</div>
+				</div>
+				<div id="subscriptionsList" style="display: none;"  class="container tabcontent-title">
+					<div class="sub-container subscription-list-container">
+						<content>
+							<div class="subs-title">
+								<p class="title">Lista subscripciones</p>
+							</div>
+							<div class="subscription-item" onclick="openSubSelected(event)">
+								<p class="text-item">Suscripcion 1</p>
+							</div>
+							<div class="subscription-item" onclick="openSubSelected(event)">
+								<p class="text-item">Suscripcion 1</p>
+							</div>
+							<div class="subscription-item" onclick="openSubSelected(event)">
+								<p class="text-item">Suscripcion 1</p>
+							</div>
+						</content>
+					</div>
+					<div class="sub-container blue-color">
+						<div class="tab">
+							<button class="tablinks active" onclick="openTabContent(event, 'makeCharge')">Hacer cobro</button>
+							<button class="tablinks" onclick="openTabContent(event, 'listCharges')">Lista cobros</button>
+						</div>
+						<div id="makeCharge" class="tabcontent">
+							<form>
+								<div class="form-group">
+									<input placeholder="Nombre" class="form-input" disabled/>
+									<label>Nombre</label>
+								</div>
+								<div class="form-group">
+									<input placeholder="Correo" class="form-input" disabled />
+									<label>Correo</label>
+								</div>
+								<div class="form-group">
+									<input placeholder="Telefono" class="form-input" disabled/>
+									<label>Telefono</label>
+								</div>
+								<div class="form-group">
+									<input placeholder="Num. Tarjeta" class="form-input" disabled />
+									<label>Num. Tarjeta</label>
+								</div>
+								<div class="cvv-info">
+									<div class="form-group">
+										<input placeholder="MM/YY" class="form-input" disabled/>
+										<label>MM/YY</label>
+									</div>
+									<div class="form-group">
+										<input type="password" placeholder="CVV" class="form-input" disabled/>
+										<label>CVV</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<button class="subscription-button">Autorizar</button>
+								</div>
+							</form>
+						</div>
+						<div id="listCharges" style="display: none;" class="tabcontent">
+							<content>
+								
+								<div class="payment-item" onclick="openPaymentInfo(event)">
+									<p class="text-item">Pago 1</p>
+								</div>
+								<div class="payment-item" onclick="openPaymentInfo(event)">
+									<p class="text-item">Pago 1</p>
+								</div>
+								<div class="payment-item" onclick="openPaymentInfo(event)">
+									<p class="text-item">Pago 1</p>
+								</div>
+							</content>
+						</div>
+					</div>
+				</div>
+				<div id="transactions" style="display: none;"  class="container tabcontent-title">
+					<div class="sub-container subscription-list-container">
+						<content>
+							<div class="subs-title">
+								<p class="title">Lista transacciones</p>
+							</div>
+							<div class="transaction-item" onclick="openTransacSelected(event)">
+								<p class="text-item">Transaccion 1</p>
+							</div>
+							<div class="transaction-item" onclick="openTransacSelected(event)">
+								<p class="text-item">Transaccion 1</p>
+							</div>
+							<div class="transaction-item" onclick="openTransacSelected(event)">
+								<p class="text-item">Transaccion 1</p>
+							</div>
+						</content>
+					</div>
+					<div class="sub-container blue-color subscription-container">
+					</div>
+				</div>
+		</container>
+	</body>
+</html>

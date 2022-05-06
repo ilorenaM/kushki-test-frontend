@@ -1,4 +1,4 @@
-const URL_BASE = "https://kushki-test-back.herokuapp.com/api"
+const URL_BASE = "http://localhost:3030/api"
 const backdrop = `rgba(0,0,123,0.4)`
 const publicMerchantKey = "aecb32d17159471ca94b3c0ca316a755"
 
@@ -197,11 +197,11 @@ function openTransactDetail() {
 
 function openTransactDelete() {
 	Swal.fire({
-		title: '¿Quiere eliminar la transaccion?',
+		title: '¿Quiere anular la transaccion?',
 		showDenyButton: true,
 		showConfirmButton:false,
 		showCancelButton: true,
-		denyButtonText: `Eliminar`,
+		denyButtonText: `anular`,
 	  }).then((result) => {
 		
 		if (result.isDenied) {
@@ -217,7 +217,6 @@ function openTransactDelete() {
         res.json()
           .then((jsonRes)=>{
             Swal.hideLoading()
-            var html =``;
             if(!!jsonRes.body){
               Swal.fire({
                 backdrop,

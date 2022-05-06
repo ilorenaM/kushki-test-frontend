@@ -1,4 +1,4 @@
-const URL_BASE = "http://localhost:3030/api"
+const URL_BASE = "https://kushki-test-back.herokuapp.com/api"
 const backdrop = `rgba(0,0,123,0.4)`
 const publicMerchantKey = "aecb32d17159471ca94b3c0ca316a755"
 

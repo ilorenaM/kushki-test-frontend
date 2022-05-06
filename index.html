@@ -3,13 +3,14 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Kushki Store</title>
-		<script src="./script.js"></script>
 		<link href="./styles/style.css" rel="stylesheet" type="text/css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 		<script src="./libs/jsonViewer/src/jquery.json-editor.js"></script>
 		<script src="./libs/jsonViewer/src/jquery.json-viewer.js"></script>
+		<script src="https://cdn.kushkipagos.com/kushki.min.js"></script>
 		<link href="./libs/jsonViewer/src/jquery.json-viewer.css" rel="stylesheet" type="text/css">
+		<script src="./script.js"></script>
 
 
 		<div class="tab-title">
@@ -20,192 +21,163 @@
 	</head>
 	<body>
 		<container class="center-cont">
-				<div id="subscription"   class="container tabcontent-title">
-						<div class="sub-container subscription-container">
-							<div class="subs-title">
-								<p class="title">Plan seleccionado</p>
-							</div>
-							<div class="subs-info">
-								<h2 class="text-details ">Premium</h2>
+			
+			<div id="subscription" class="container tabcontent-title">
+				<div class="sub-container subscription-container">
+					<div class="subs-title">
+						<p class="title">Plan seleccionado</p>
+					</div>
+					<div class="subs-info">
+						<h2 class="text-details ">Premium</h2>
 
-								<p class="price-text ">S/ 50</p>
-								<div>
-									<p class="text-details"><span class="check">✓</span>Plan premium con todos los accesos</p>
-									<p class="text-details"><span class="check">✓</span>Cobro mensual todos los 5 de cada mes</p>
-								</div>
-							</div>
-						</div>
-						<div class="sub-container blue-color subscription-container">
-							<div class="subs-title">
-								<p class="title-blue">Tarjeta de crédito</p>
-								<img src="./images/visa.svg" />
-								<img src="./images/mastercard.svg" />
-								<img src="./images/amex.svg" />
-							</div>
-							<form>
-								<div class="form-group">
-									<input placeholder="Nombre" class="form-input"/>
-									<label>Nombre</label>
-								</div>
-								<div class="form-group">
-									<input placeholder="Correo" class="form-input"/>
-									<label>Correo</label>
-								</div>
-								<div class="form-group">
-									<input placeholder="Telefono" class="form-input"/>
-									<label>Telefono</label>
-								</div>
-								<div class="form-group">
-									<input placeholder="Num. Tarjeta" class="form-input"/>
-									<label>Num. Tarjeta</label>
-								</div>
-								<div class="cvv-info">
-									<div class="form-group">
-										<input placeholder="MM/YY" class="form-input"/>
-										<label>MM/YY</label>
-									</div>
-									<div class="form-group">
-										<input type="password" placeholder="CVV" class="form-input"/>
-										<label>CVV</label>
-									</div>
-								</div>
-								<div class="form-group">
-									<button class="success-button">Suscribirse</button>
-								</div>
-							</form>
-						</div>
-				</div>
-				<div id="subscriptionsList" style="display: none;"  class="container tabcontent-title">
-					<div class="sub-container subscription-list-container">
-						<content>
-							<div class="subs-title">
-								<p class="title">Lista subscripciones</p>
-							</div>
-							<div class="subscription-item" onclick="openSubSelected(event)">
-								<p class="text-item">Suscripcion 1</p>
-							</div>
-							<div class="subscription-item" onclick="openSubSelected(event)">
-								<p class="text-item">Suscripcion 1</p>
-							</div>
-							<div class="subscription-item" onclick="openSubSelected(event)">
-								<p class="text-item">Suscripcion 1</p>
-							</div>
-						</content>
-					</div>
-					<div class="sub-container blue-color">
-						<div class="tab">
-							<button class="tablinks active" onclick="openTabContent(event, 'makeCharge')">Hacer cobro</button>
-							<button class="tablinks" onclick="openTabContent(event, 'listCharges')">Lista cobros</button>
-						</div>
-						<div id="makeCharge" class="tabcontent">
-							<form>
-								<div class="form-group">
-									<input placeholder="Nombre" class="form-input" disabled/>
-									<label>Nombre</label>
-								</div>
-								<div class="form-group">
-									<input placeholder="Correo" class="form-input" disabled />
-									<label>Correo</label>
-								</div>
-								<div class="form-group">
-									<input placeholder="Telefono" class="form-input" disabled/>
-									<label>Telefono</label>
-								</div>
-								<div class="form-group">
-									<input placeholder="Num. Tarjeta" class="form-input" disabled />
-									<label>Num. Tarjeta</label>
-								</div>
-								<div class="cvv-info">
-									<div class="form-group">
-										<input placeholder="MM/YY" class="form-input" disabled/>
-										<label>MM/YY</label>
-									</div>
-									<div class="form-group">
-										<input type="password" placeholder="CVV" class="form-input" disabled/>
-										<label>CVV</label>
-									</div>
-								</div>
-								<div class="form-group">
-									<button class="success-button">Autorizar</button>
-								</div>
-							</form>
-						</div>
-						<div id="listCharges" style="display: none;" class="tabcontent">
-							<content>
-								
-								<div class="payment-item" onclick="openPaymentInfo(event)">
-									<p class="text-item">Pago 1</p>
-								</div>
-								<div class="payment-item" onclick="openPaymentInfo(event)">
-									<p class="text-item">Pago 1</p>
-								</div>
-								<div class="payment-item" onclick="openPaymentInfo(event)">
-									<p class="text-item">Pago 1</p>
-								</div>
-							</content>
+						<p class="price-text ">USD 50</p>
+						<div>
+							<p class="text-details"><span class="check">✓</span>Plan premium con todos los accesos</p>
+							<p class="text-details"><span class="check">✓</span>Cobro mensual todos los 5 de cada mes</p>
 						</div>
 					</div>
 				</div>
-				<div id="transactions" style="display: none;"  class="container tabcontent-title">
-					<div class="sub-container subscription-list-container">
-						<div class="subs-title">
-							<p class="title">Lista transacciones</p>
-						</div>
-						<content id="transactionsList">
-							<div class="transaction-item" onclick="openTransacSelected(event)">
-								<div class="transaction-info">
-									<p class="text-item">Nombre</p>
-									<p class="text-date">Fecha</p>
-								</div>
-								<p class="text-price">Monto</p>
-							</div>
-							<div class="transaction-item" onclick="openTransacSelected(event)">
-								<p class="text-item">Transaccion 1</p>
-							</div>
-							<div class="transaction-item" onclick="openTransacSelected(event)">
-								<p class="text-item">Transaccion 1</p>
-							</div>
-						</content>
+				<div class="sub-container blue-color subscription-container">
+					<div class="subs-title">
+						<p class="title-blue">Tarjeta de crédito</p>
+						<img src="./images/visa.svg" />
+						<img src="./images/mastercard.svg" />
+						<img src="./images/amex.svg" />
 					</div>
-					<div class="sub-container blue-color subscription-container">
-						<div class="subs-title">
-							<p class="title">Detalles</p>
-						</div>
+					<form onsubmit="makeSubscription(event)">
 						<div class="form-group">
-							<input id="nameTransaction" placeholder="Nombre" class="form-input" disabled/>
+							<input id="subscriptionName" placeholder="Nombre" class="form-input" required/>
 							<label>Nombre</label>
 						</div>
 						<div class="form-group">
-							<input id="emailTransaction" placeholder="Correo" class="form-input" disabled />
+							<input id="subscriptionLastName" placeholder="Apellido" class="form-input" required/>
+							<label>Apellido</label>
+						</div>
+						<div class="form-group">
+							<input id="subscriptionEmail" placeholder="Correo" class="form-input" required/>
 							<label>Correo</label>
 						</div>
 						<div class="form-group">
-							<input id="phoneTransaction" placeholder="Telefono" class="form-input" disabled/>
+							<input id="subscriptionPhone" placeholder="Telefono" class="form-input" required/>
 							<label>Telefono</label>
 						</div>
 						<div class="form-group">
-							<input id="cardTransaction" placeholder="Num. Tarjeta" class="form-input" disabled />
+							<input id="subscriptionCard" placeholder="Num. Tarjeta" class="form-input" required/>
 							<label>Num. Tarjeta</label>
 						</div>
-						<div class="form-group">
-							<input id="amountTransaction" placeholder="Monto" class="form-input" disabled/>
-							<label>Monto</label>
+						<div class="cvv-info">
+							<div class="form-group">
+								<input id="subscriptionDate" placeholder="MM/YY" class="form-input" required/>
+								<label>MM/YY</label>
+							</div>
+							<div class="form-group">
+								<input id="subscriptionCVV" type="password" placeholder="CVV" class="form-input" required/>
+								<label>CVV</label>
+							</div>
 						</div>
 						<div class="form-group">
-							<input id="brandTransaction" placeholder="Franquicia" class="form-input" disabled/>
-							<label>Franquicia</label>
+							<button type="submit" class="success-button">Suscribirse</button>
 						</div>
-						<div class="form-group">
-							<input id="statusTransaction" placeholder="Estado" class="form-input" disabled/>
-							<label>Estado</label>
-						</div>
-						<input id="transactionSelected" style="display: none;"/>
-						<div class="form-group two-col">
-							<button id="detailTransaction" class="success-button two-col-item" onclick="openTransactDetail()" disabled>Detalle</button>
-							<button id="deleteTransaction" class="danger-button two-col-item" onclick="openTransactDelete()" disabled>Eliminar</button>
-						</div>
+					</form>
+				</div>
+			</div>
+			<div id="cardsInfo" class="btn-group">
+				<button onclick="transactionApprove()">Transaccion aprobada</button>
+				<button onclick="transactionDeclinedToken()">Transaccion declinada en solicitud de token</button>
+				<button onclick="transactionDeclined()">Transaccion declinada</button>
+			</div>
+			<div id="subscriptionsList" style="display: none;"  class="container tabcontent-title">
+				<div class="sub-container subscription-list-container">
+					<div class="subs-title">
+						<p class="title">Lista subscripciones</p>
+					</div>
+					<content id="subscriptionsListItems">
+						
+					</content>
+				</div>
+				<div class="sub-container blue-color">
+					<div class="subs-title">
+						<p class="title">Detalle subscripcion</p>
+					</div>
+					<div class="form-group">
+						<input id="subscriptionDetailName" placeholder="Nombre" class="form-input" disabled/>
+						<label>Nombre</label>
+					</div>
+					<div class="form-group">
+						<input id="subscriptionDetailEmail" placeholder="Correo" class="form-input" disabled />
+						<label>Correo</label>
+					</div>
+					<div class="form-group">
+						<input id="subscriptionDetailPhone" placeholder="Telefono" class="form-input" disabled/>
+						<label>Telefono</label>
+					</div>
+					<div class="form-group">
+						<input id="subscriptionDetailCard" placeholder="Num. Tarjeta" class="form-input" disabled />
+						<label>Num. Tarjeta</label>
+					</div>
+					<div class="form-group">
+						<input id="subscriptionDetailPlan" placeholder="Plan" class="form-input" disabled/>
+						<label>Plan</label>
+					</div>
+					<div class="form-group">
+						<input id="subscriptionDetailAmount" placeholder="Moto" class="form-input" disabled/>
+						<label>Moto</label>
+					</div>
+					<input id="subscriptionSelected" style="display: none;"/>
+					<div class="form-group">
+						<button id="authorizePayment" class="success-button" onclick="authorizePayment()">Autorizar</button>
+					</div>
+						
+				</div>
+			</div>
+			<div id="transactions" style="display: none;"  class="container tabcontent-title">
+				<div class="sub-container subscription-list-container">
+					<div class="subs-title">
+						<p class="title">Lista transacciones</p>
+					</div>
+					<content id="transactionsList">
+						
+					</content>
+				</div>
+				<div class="sub-container blue-color subscription-container">
+					<div class="subs-title">
+						<p class="title">Detalles</p>
+					</div>
+					<div class="form-group">
+						<input id="nameTransaction" placeholder="Nombre" class="form-input" disabled/>
+						<label>Nombre</label>
+					</div>
+					<div class="form-group">
+						<input id="emailTransaction" placeholder="Correo" class="form-input" disabled />
+						<label>Correo</label>
+					</div>
+					<div class="form-group">
+						<input id="phoneTransaction" placeholder="Telefono" class="form-input" disabled/>
+						<label>Telefono</label>
+					</div>
+					<div class="form-group">
+						<input id="cardTransaction" placeholder="Num. Tarjeta" class="form-input" disabled />
+						<label>Num. Tarjeta</label>
+					</div>
+					<div class="form-group">
+						<input id="amountTransaction" placeholder="Monto" class="form-input" disabled/>
+						<label>Monto</label>
+					</div>
+					<div class="form-group">
+						<input id="brandTransaction" placeholder="Franquicia" class="form-input" disabled/>
+						<label>Franquicia</label>
+					</div>
+					<div class="form-group">
+						<input id="statusTransaction" placeholder="Estado" class="form-input" disabled/>
+						<label>Estado</label>
+					</div>
+					<input id="transactionSelected" style="display: none;"/>
+					<div class="form-group two-col">
+						<button id="detailTransaction" class="success-button two-col-item" onclick="openTransactDetail()" disabled>Detalle</button>
+						<button id="deleteTransaction" class="danger-button two-col-item" onclick="openTransactDelete()" disabled>Eliminar</button>
 					</div>
 				</div>
+			</div>
 		</container>
 	</body>
 </html>
